@@ -7,96 +7,101 @@
 <title>Plant Pal | Self-Watering Pots</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fffafa;color:#39483d}
-header{background:#f9e8ed;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:27px;font-weight:bold;color:#526c58}
-nav a{color:#39483d;text-decoration:none;margin:8px;font-weight:bold}
-.hero{text-align:center;padding:55px 18px;background:#f5f5ed}
-.hero h1{font-size:38px;color:#526c58}
-.hero p{font-size:17px;line-height:1.7}
-.btn{display:inline-block;background:#718b70;color:white;padding:13px 24px;border-radius:7px;text-decoration:none;margin-top:12px}
-h2{text-align:center;color:#526c58;margin:38px 0 25px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;padding:15px 6% 45px}
-.card{background:white;border:1px solid #eee3e5;border-radius:12px;padding:18px;text-align:center;box-shadow:0 3px 12px #0000000c}
-.card h3{color:#526c58}
-.price{font-size:21px;font-weight:bold;color:#b46d7c}
-.pot{height:190px;display:flex;align-items:center;justify-content:center;margin:auto}
-.bottle{width:115px;height:145px;border:4px solid #a9c8b5;border-radius:12px 12px 25px 25px;background:#e4f2e9;position:relative;display:flex;justify-content:center;align-items:flex-start}
-.bottle:before{content:"";position:absolute;top:-20px;width:55px;height:20px;background:#dce9df;border:3px solid #a9c8b5;border-radius:7px 7px 0 0}
-.soil{position:absolute;top:12px;width:90px;height:17px;background:#8a684c;border-radius:50%}
-.plant{position:absolute;top:-48px;font-size:0;width:5px;height:55px;background:#658b61}
-.plant:before,.plant:after{content:"";position:absolute;width:27px;height:13px;background:#719b6c;border-radius:100% 0 100% 0}
-.plant:before{left:-24px;top:10px;transform:rotate(20deg)}
-.plant:after{left:3px;top:25px;transform:rotate(70deg)}
-.water{position:absolute;bottom:0;width:100%;height:42px;background:#b8dce3;border-radius:0 0 18px 18px;opacity:.8}
-.pink{background:#f9e4e9;border-color:#dbaab8}
-.pink:before{background:#f4d5df;border-color:#dbaab8}
-.white{background:#f7f7f3}
-.green{background:#dceadd;border-color:#91ad91}
-.green:before{background:#dceadd;border-color:#91ad91}
-.modern{border-radius:5px 5px 25px 25px;background:#eeeae3;border-color:#b9b3a7}
-.modern:before{background:#eeeae3;border-color:#b9b3a7}
-.about{text-align:center;padding:35px 8%;background:#f9e8ed;line-height:1.8}
-footer{text-align:center;background:#526c58;color:white;padding:22px}
-@media(max-width:500px){.hero h1{font-size:29px}nav{margin-top:12px}}
+body{margin:0;font-family:Arial,sans-serif;color:#405344;background:#fffdfc}
+header{background:#f8e9ed;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:bold;letter-spacing:2px;color:#536e59}
+nav a{color:#405344;text-decoration:none;margin:10px;font-weight:bold}
+.hero{background:#f2f5ed;text-align:center;padding:75px 20px}
+.hero h1{font-size:42px;color:#526d57;margin:0 0 15px}
+.hero p{font-size:17px;line-height:1.8;max-width:600px;margin:auto}
+.btn{display:inline-block;background:#718b70;color:white;padding:14px 28px;border-radius:6px;text-decoration:none;margin-top:22px}
+.section-title{text-align:center;margin:55px 10px 10px;color:#536e59;font-size:30px}
+.subtitle{text-align:center;color:#777;margin:10px 15px 30px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px;padding:20px 7% 65px}
+.card{background:white;border:1px solid #eee3e5;border-radius:12px;overflow:hidden;text-align:center;box-shadow:0 4px 16px #0000000b;padding-bottom:22px}
+.card img{width:100%;height:245px;object-fit:cover;display:block}
+.card h3{color:#536e59;margin:20px 8px 8px}
+.card p{color:#777;margin:8px}
+.price{font-size:22px!important;color:#b36f80!important;font-weight:bold}
+.about{background:#f8e9ed;padding:55px 10%;text-align:center;line-height:1.9}
+.about h2{color:#536e59}
+.contact{text-align:center;padding:45px 15px}
+footer{background:#536e59;color:white;text-align:center;padding:22px}
+@media(max-width:550px){
+.hero h1{font-size:32px}
+header{justify-content:center;gap:10px}
+nav a{margin:7px}
+}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo">PLANT PAL</div>
 <nav>
 <a href="#home">Home</a>
 <a href="#shop">Shop</a>
 <a href="#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero" id="home">
 <h1>Make Plant Care Easy</h1>
-<p>Beautiful self-watering pots made with a simple, reusable bottle design.<br>Keep your plants fresh with less daily effort.</p>
-<a class="btn" href="#shop">Explore Our Pots</a>
+<p>Discover our beautiful self-watering pots made with a reusable bottle design. A simple way to care for your plants and make your space greener.</p>
+<a class="btn" href="#shop">Explore Our Collection</a>
 </section>
 
-<h2 id="shop">Our Self-Watering Pot Collection</h2>
+<h2 class="section-title" id="shop">Our Product Collection</h2>
+<p class="subtitle">Choose your favourite Plant Pal design</p>
+
 <section class="products">
-<div class="card"><div style="text-align:center; margin:20px;">
-  <img src="Screenshot_20261113-183459.jpg"
-       alt="Plant Pal Self Watering Pot"
-       style="width:100%; max-width:450px; height:auto; border-radius:15px;">
-</div>
-<div class="pot"><div class="bottle white"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+
+<div class="card">
+<img src="plant-pal-classic-white.jpg" alt="Classic White Self-Watering Pot">
 <h3>Classic White Pot</h3>
-<p>Simple and elegant design for your home.</p>
+<p>Simple and elegant design.</p>
 <p class="price">Rs. 500</p>
 </div>
+
 <div class="card">
-<div class="pot"><div class="bottle pink"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
-<h3>Soft Pink Pot</h3>
-<p>A gentle pink look for your space.</p>
+<img src="plant-pal-pink.jpg" alt="Pink Self-Watering Pot">
+<h3>Pink Style Pot</h3>
+<p>A soft and beautiful design.</p>
 <p class="price">Rs. 500</p>
 </div>
+
 <div class="card">
-<div class="pot"><div class="bottle green"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+<img src="plant-pal-sage-green.jpg" alt="Sage Green Self-Watering Pot">
 <h3>Sage Green Pot</h3>
-<p>A fresh and natural style.</p>
+<p>A fresh and natural look.</p>
 <p class="price">Rs. 500</p>
 </div>
+
 <div class="card">
-<div class="pot"><div class="bottle modern"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
-<h3>Modern Neutral Pot</h3>
-<p>A clean design for every corner.</p>
+<img src="plant-pal-modern-white.jpg" alt="Modern White Self-Watering Pot">
+<h3>Modern White Pot</h3>
+<p>Minimal style for your home.</p>
 <p class="price">Rs. 500</p>
 </div>
+
 </section>
 
 <section class="about" id="about">
 <h2>About Plant Pal</h2>
-<p>Plant Pal offers a simple self-watering pot concept. The lower section stores water while the upper section holds the plant. It helps make plant care easier and encourages reuse of plastic bottles.</p>
+<p>Plant Pal is a self-watering pot concept designed to make plant care easier. Its lower section stores water while the upper section holds the plant. It also encourages the reuse of plastic bottles.</p>
 </section>
+
+<section class="contact" id="contact">
+<h2>Contact Plant Pal</h2>
+<p>Thank you for visiting our store.</p>
+<p>Email: plantpal@example.com</p>
+</section>
+
 <footer>
 <p>PLANT PAL</p>
-<p>Simple care. Greener spaces.</p>
-<p>Contact: plantpal@example.com</p>
+<p>Simple Care. Greener Spaces.</p>
 </footer>
+
 </body>
 </html>
