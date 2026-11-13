@@ -4,155 +4,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plant Pal | Grow with Love</title>
+<title>Plant Pal | Self-Watering Pots</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fffafa;color:#435448}
-header{background:#fce8ef;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
-.logo{font-size:24px;font-weight:bold;color:#66856c}
-nav a{color:#536b58;text-decoration:none;margin:0 7px;font-size:13px}
-.cart-btn,button{background:#91ad91;color:white;border:0;padding:11px 17px;border-radius:22px;cursor:pointer}
-.hero{text-align:center;padding:65px 18px;background:linear-gradient(130deg,#fff1f5,#f0f6eb)}
-.hero h1{font-size:38px;color:#66856c;margin:10px}
-.hero p{line-height:1.7}
-.hero button{margin-top:12px}
-section{padding:40px 6%;text-align:center}
-h2{color:#66856c}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.card{background:white;border:1px solid #f5e5e9;border-radius:18px;padding:15px;box-shadow:0 3px 12px #eadde0}
-.pot{height:155px;background:#fce8ef;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:80px}
-.card h3{color:#66856c}
-.price{font-weight:bold;color:#b77d91}
-.card button{margin-top:8px}
-.about{background:#f2f7ef;line-height:1.8}
-#cartItems{max-width:550px;margin:auto;text-align:left}
-.cart-row{padding:12px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:8px}
-input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #e8cfd8;border-radius:9px;font-size:15px}
-form{max-width:500px;margin:auto;text-align:left}
-footer{background:#fce8ef;text-align:center;padding:25px;line-height:1.8}
-#checkout{display:none;background:#fff4f7;padding:25px;border-radius:15px;max-width:550px;margin:20px auto}
-@media(max-width:500px){.hero h1{font-size:30px}nav a{margin:0 3px;font-size:11px}}
+body{margin:0;font-family:Arial,sans-serif;background:#fffafa;color:#39483d}
+header{background:#f9e8ed;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:bold;color:#526c58}
+nav a{color:#39483d;text-decoration:none;margin:8px;font-weight:bold}
+.hero{text-align:center;padding:55px 18px;background:#f5f5ed}
+.hero h1{font-size:38px;color:#526c58}
+.hero p{font-size:17px;line-height:1.7}
+.btn{display:inline-block;background:#718b70;color:white;padding:13px 24px;border-radius:7px;text-decoration:none;margin-top:12px}
+h2{text-align:center;color:#526c58;margin:38px 0 25px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;padding:15px 6% 45px}
+.card{background:white;border:1px solid #eee3e5;border-radius:12px;padding:18px;text-align:center;box-shadow:0 3px 12px #0000000c}
+.card h3{color:#526c58}
+.price{font-size:21px;font-weight:bold;color:#b46d7c}
+.pot{height:190px;display:flex;align-items:center;justify-content:center;margin:auto}
+.bottle{width:115px;height:145px;border:4px solid #a9c8b5;border-radius:12px 12px 25px 25px;background:#e4f2e9;position:relative;display:flex;justify-content:center;align-items:flex-start}
+.bottle:before{content:"";position:absolute;top:-20px;width:55px;height:20px;background:#dce9df;border:3px solid #a9c8b5;border-radius:7px 7px 0 0}
+.soil{position:absolute;top:12px;width:90px;height:17px;background:#8a684c;border-radius:50%}
+.plant{position:absolute;top:-48px;font-size:0;width:5px;height:55px;background:#658b61}
+.plant:before,.plant:after{content:"";position:absolute;width:27px;height:13px;background:#719b6c;border-radius:100% 0 100% 0}
+.plant:before{left:-24px;top:10px;transform:rotate(20deg)}
+.plant:after{left:3px;top:25px;transform:rotate(70deg)}
+.water{position:absolute;bottom:0;width:100%;height:42px;background:#b8dce3;border-radius:0 0 18px 18px;opacity:.8}
+.pink{background:#f9e4e9;border-color:#dbaab8}
+.pink:before{background:#f4d5df;border-color:#dbaab8}
+.white{background:#f7f7f3}
+.green{background:#dceadd;border-color:#91ad91}
+.green:before{background:#dceadd;border-color:#91ad91}
+.modern{border-radius:5px 5px 25px 25px;background:#eeeae3;border-color:#b9b3a7}
+.modern:before{background:#eeeae3;border-color:#b9b3a7}
+.about{text-align:center;padding:35px 8%;background:#f9e8ed;line-height:1.8}
+footer{text-align:center;background:#526c58;color:white;padding:22px}
+@media(max-width:500px){.hero h1{font-size:29px}nav{margin-top:12px}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">🌱 Plant Pal</div>
+<div class="logo">PLANT PAL</div>
 <nav>
 <a href="#home">Home</a>
 <a href="#shop">Shop</a>
 <a href="#about">About</a>
-<a href="#contact">Contact</a>
 </nav>
-<button class="cart-btn" onclick="showCart()">Cart (<span id="count">0</span>)</button>
 </header>
 
-<div class="hero" id="home">
-<h1>Grow with Love 🌸</h1>
-<p>Make plant care simple and beautiful with Plant Pal.<br>
-Discover our self-watering plant pots!</p>
-<button onclick="document.getElementById('shop').scrollIntoView()">Shop Now</button>
-</div>
+<section class="hero" id="home">
+<h1>Make Plant Care Easy</h1>
+<p>Beautiful self-watering pots made with a simple, reusable bottle design.<br>Keep your plants fresh with less daily effort.</p>
+<a class="btn" href="#shop">Explore Our Pots</a>
+</section>
 
-<section id="shop">
-<h2>Our Products 🌷</h2>
-<p>Beautiful pots for happy and healthy plants.</p>
-<div class="products">
+<h2 id="shop">Our Self-Watering Pot Collection</h2>
+<section class="products">
 <div class="card">
-<div class="pot">🪴</div>
-<h3>Classic Self-Watering Pot</h3>
-<p>Simple and stylish pot for everyday plant care.</p>
-<p class="price">Rs. 1,200</p>
-<button onclick="add(0)">Add to Cart</button>
+<div class="pot"><div class="bottle white"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+<h3>Classic White Pot</h3>
+<p>Simple and elegant design for your home.</p>
+<p class="price">Rs. 500</p>
 </div>
 <div class="card">
-<div class="pot">🌿</div>
-<h3>Mini Self-Watering Pot</h3>
-<p>A cute pot for small indoor plants.</p>
-<p class="price">Rs. 900</p>
-<button onclick="add(1)">Add to Cart</button>
+<div class="pot"><div class="bottle pink"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+<h3>Soft Pink Pot</h3>
+<p>A gentle pink look for your space.</p>
+<p class="price">Rs. 500</p>
 </div>
 <div class="card">
-<div class="pot">🌱</div>
-<h3>Premium Self-Watering Pot</h3>
-<p>A beautiful pot for your home and office.</p>
-<p class="price">Rs. 1,500</p>
-<button onclick="add(2)">Add to Cart</button>
+<div class="pot"><div class="bottle green"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+<h3>Sage Green Pot</h3>
+<p>A fresh and natural style.</p>
+<p class="price">Rs. 500</p>
 </div>
-</div>
-</section>
-
-<section id="about" class="about">
-<h2>About Plant Pal 💚</h2>
-<p>Plant Pal is an e-commerce project that offers self-watering plant pots. Our aim is to make plant care easier, save time and add beauty to homes. Our pots are designed to help provide water to plants when needed.</p>
-</section>
-
-<section id="cart">
-<h2>My Shopping Cart 🛒</h2>
-<div id="cartItems">Your cart is empty.</div>
-<h3 id="total">Total: Rs. 0</h3>
-<button onclick="checkout()">Proceed to Checkout</button>
-<div id="checkout">
-<h2>Customer Details</h2>
-<form onsubmit="placeOrder(event)">
-<label>Full Name</label>
-<input required placeholder="Enter your name">
-<label>Phone Number</label>
-<input required type="tel" placeholder="Enter phone number">
-<label>Delivery Address</label>
-<textarea required placeholder="Enter your complete address"></textarea>
-<button type="submit">Place Demo Order</button>
-</form>
-<p><small>Student project demonstration. No online payment is collected.</small></p>
+<div class="card">
+<div class="pot"><div class="bottle modern"><div class="plant"></div><div class="soil"></div><div class="water"></div></div></div>
+<h3>Modern Neutral Pot</h3>
+<p>A clean design for every corner.</p>
+<p class="price">Rs. 500</p>
 </div>
 </section>
 
-<section id="contact">
-<h2>Contact Us 🌸</h2>
-<p>Have a question about Plant Pal?</p>
-<p>Email: myplantpal.pk111@gmail.com</p>
-<p>Thank you for visiting our store!</p>
+<section class="about" id="about">
+<h2>About Plant Pal</h2>
+<p>Plant Pal offers a simple self-watering pot concept. The lower section stores water while the upper section holds the plant. It helps make plant care easier and encourages reuse of plastic bottles.</p>
 </section>
-
 <footer>
-<strong>🌱 Plant Pal</strong>
-<p>Grow with Love | Make Plant Care Easy</p>
-<p>© 2026 Plant Pal. All rights reserved.</p>
+<p>PLANT PAL</p>
+<p>Simple care. Greener spaces.</p>
+<p>Contact: plantpal@example.com</p>
 </footer>
-
-<script>
-const products=[
-{name:"Classic Self-Watering Pot",price:1200},
-{name:"Mini Self-Watering Pot",price:900},
-{name:"Premium Self-Watering Pot",price:1500}
-];
-let cart=[];
-function add(i){cart.push(i);update();alert("Product added to cart!");}
-function update(){
-document.getElementById("count").textContent=cart.length;
-let total=0;
-let html="";
-cart.forEach((i,index)=>{
-total+=products[i].price;
-html+=`<div class="cart-row"><span>${products[i].name} - Rs. ${products[i].price}</span><button onclick="removeItem(${index})">Remove</button></div>`;
-});
-document.getElementById("cartItems").innerHTML=html||"Your cart is empty.";
-document.getElementById("total").textContent="Total: Rs. "+total;
-}
-function removeItem(i){cart.splice(i,1);update();}
-function showCart(){document.getElementById("cart").scrollIntoView({behavior:"smooth"});}
-function checkout(){
-if(!cart.length){alert("Please add a product to your cart first.");return;}
-document.getElementById("checkout").style.display="block";
-}
-function placeOrder(e){
-e.preventDefault();
-if(!cart.length)return;
-alert("Thank you! Your demo order has been placed successfully.");
-cart=[];
-update();
-document.getElementById("checkout").style.display="none";
-e.target.reset();
-}
-</script>
 </body>
 </html>
